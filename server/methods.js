@@ -2,6 +2,25 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 Meteor.methods({
+  // Get the names for the item
+  getItemNames : function (url) {
+    this.unblock();
+
+    var result = Meteor.http.get('http://access.alchemyapi.com/calls/url/URLGetConstraintQuery?apikey=5285731d39d51db11fe8db5d083d8fbe7cc5ed60',
+    {
+      params : {
+        url : url,
+        outputMode : "json",
+        cquery : "paragraph or h1"
+      }
+    });
+
+    if(result.statusCode === 200) {
+      return result.data.queryResults;
+    } else {
+      return false;
+    }
+  },
   // Get the images for the item
   getItemImages : function (url) {
     this.unblock();
@@ -21,6 +40,7 @@ Meteor.methods({
       return false;
     }
   },
+  // Get the captions for the item
   getItemCaptions : function (url) {
     this.unblock();
 
@@ -38,6 +58,7 @@ Meteor.methods({
       return false;
     }
   },
+  // Get the tags for the item
   getItemTags : function (url) {
     this.unblock();
 
