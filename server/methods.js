@@ -53,7 +53,15 @@ Meteor.methods({
     });
 
     if(result.statusCode === 200) {
-      return result.data.text;
+      returnResult = [];
+
+      result.data.text.split('\n').forEach(function(caption) {
+        if((caption.replace(/^\s\s*/, '').replace(/\s\s*$/, '') != "")) {
+          returnResult.push(caption.replace(/^\s\s*/, '').replace(/\s\s*$/, ''));
+        }
+      });
+
+      return returnResult;
     } else {
       return false;
     }
