@@ -4,5 +4,8 @@
 Meteor.startup(function () {
 // Configure collectionApi
 ///////////////////////////////////////////////////////////////////////////////
-	
+
+// Require Node Packages
+var HtmlParser = __meteor_bootstrap__.require('htmlparser');
+
 });

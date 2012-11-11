@@ -3,7 +3,7 @@
 
   Holds possible data values for the item (pulled via Alchemy API)
 
-  @opt  Names     (array)             = The possible names of the item
+  @opt  Name      (string)            = The possible name of the item
   @opt  Images    (array of urls)     = The possible image urls to represent the item
   @opt  Captions  (array)             = The possible captions for the item
   @opt  Tags      (array)             = The possible tags on the item
@@ -15,11 +15,11 @@ var model = {
   urlRoot : '/api/items',
 
 	defaults : {
-		"Names" : [],
+		"Name" : null,
 		"Images" : [],
 		"Captions" : [],
     "Tags" : [],
-    "Prices" : [],
+    "Price" : [],
     "URL" : null
 	},
 
