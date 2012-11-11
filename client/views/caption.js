@@ -3,15 +3,16 @@
 
 */
 var view = {
+	initialize : function () {
+		_.bindAll(this, 'render');
+		this.model.bind('change', this.render);
+	},
 	render : function () {
-		var template = _.template( $('#itemCaptionPicker') );
+		var template = Meteor.render(function () {
+			return Template.ItemCaption();
+		});
 		this.$el.html(template);
-	},
-	next : function () {
-		$('p.itemCaption').html('no');
-	},
-	previous : function () {
-		$('p.itemCaption').html('yes');
+		return this;
 	}
 };
 

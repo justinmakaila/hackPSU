@@ -7,6 +7,7 @@ Template.urlForm.events({
 	"click button" : function() {
 		if(itemCandidate.get("URL")) {
 			// Get Item Name
+<<<<<<< HEAD
     	Meteor.call(
         	"getItemName",
         	itemCandidate.get("URL"),
@@ -23,17 +24,36 @@ Template.urlForm.events({
           		itemCandidate.set("Images", result);
         	}
       	);
+=======
+	    	Meteor.call(
+	        	"getItemNames",
+	        	itemCandidate.get("URL"),
+	        	function(error, result) {
+	          		names.set("Names", result);
+	        	}
+	      	);
+
+	      	// Get Item Images
+	      	Meteor.call(
+	        	"getItemImages",
+	        	itemCandidate.get("URL"),
+	        	function(error, result) {
+	          		images.set("Images", result);
+	        	}
+	      	);
+>>>>>>> ce0cdd5a30ab971c5a5cd21e904c366ca363c556
 
 			// Get Item Captions
 			Meteor.call(
 				"getItemCaptions",
 				itemCandidate.get("URL"),
 				function(error, result) {
-					itemCandidate.set("Captions", result);
+					captions.set("Captions", result);
 				}
 			);
 
 			// Get Item Tags
+<<<<<<< HEAD
       Meteor.call(
         "getItemTags",
         itemCandidate.get("URL"),
@@ -52,6 +72,15 @@ Template.urlForm.events({
       );
 
       $('div.itemCandidate').show();
+=======
+			Meteor.call(
+				"getItemTags",
+				itemCandidate.get("URL"),
+				function(error, result) {
+					tags.set("Tags", result);
+				}
+			);
+>>>>>>> ce0cdd5a30ab971c5a5cd21e904c366ca363c556
 		}
 	}
 });

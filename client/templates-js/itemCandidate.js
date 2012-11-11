@@ -1,3 +1,0 @@
-Template.itemCandidate.rendered = function () {
-
-}

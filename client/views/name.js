@@ -3,19 +3,42 @@
 
 */
 var view = {
+	initialize : function () {
+		_.bindAll(this, 'render');
+		this.model.bind('change', this.render);
+	},
 	render : function () {
-		var template = _.template( $('#itemNamePicker') );
+		var template = Meteor.render(function () {
+			return Template.ItemName();
+		});
 		this.$el.html(template);
+		return this;
 	},
-	next : function () {
-		$('h1.itemName').html('no');
+
+	events : {
+		'dblclick' : 'edit',
+		'blur .edit' : 'close'
 	},
-	previous : function () {
-		$('h1.itemName').html('yes');
+	edit : function () {
+		console.log('edit');
+		this.$el.addClass('editing');
+		//this.input.focus();
+	},
+	close : function () {
+		console.log('close');
+		//var value = this.input.val();
+		//console.log(value);
+		//if (!value) this.clear();
+		//this.model.save({Name: value});
+		this.$el.removeClass('editing');
+	},
+	clear : function () {
+		console.log('clear');
+		this.model.clear();
 	}
 };
 
 /* 
   Create ItemNameView
  */
-var ItemNameView = PickerView.extend(view);
+var ItemNameView = Backbone.View.extend(view);

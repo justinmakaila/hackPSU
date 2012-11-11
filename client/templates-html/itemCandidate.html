@@ -2,57 +2,76 @@
 
 <div class="itemCandidate">
 	<!-- Item Name View -->
-	<div id="itemNamePicker" class="itemName picker section">
-		<h1 class="title">Item Name</h1>
-		<a class="previous button">&laquo;</a>
-		<h1 class="itemName">Item Name</h1>
-		<a class="next button">&raquo;</a>
-	</div>
+	{{> ItemName}}
 	<!-- End Item Name View -->
 
 	<!-- Item Image View -->
-	<div id="itemImagePicker" class="itemImage picker section">
-		<h1 class="title">Image</h1>
-		<a class="previous button">&laquo;</a>
-		<div class="itemImage">
-
-		</div>
-		<a class="next button">&raquo;</a>
-	</div>
+	{{> ItemImage}}
 	<!-- End Item Image View -->
 
 	<!-- Item Caption View -->
-	<div id="itemCaptionPicker" class="itemCaption picker section">
-		<h1 class="title">Caption</h1>
-		<a class="previous button">&laquo;</a>
-		<p class="itemCaption">
-			This is an example item caption for my item.
-			It is very nice to be here tonight.  Thank you!
-			I need coffee.
-		</p>
-		<a class="next button">&raquo;</a>
-	</div>
+	{{> ItemCaption}}
 	<!-- End Item Caption View -->
 
 	<!-- Item Price View -->
-	<div id="itemPricePicker" class="itemPrice picker section">
-		<h1 class="title">Price</h1>
-		<a class="previous button">&laquo;</a>
-		<h3 class="itemPrice">$40</h3>
-		<a class="next button">&raquo;</a>
-	</div>
+	{{> ItemPrice}}
 	<!-- End Item Price View -->
 
 	<!-- Item Tags View -->
-	<div id="itemTagsPicker" class="itemTags section">
-		<h1 class="title">Tags</h1>
-		<textarea class="itemTags">
-
-		</textarea>
-	</div>
+	{{> ItemTags}}
 	<!-- End Item Tags View -->
 
 	<!-- Add Button -->
 	<button name="Add">Add to KnowsWhat</button>
 </div>
+</template>
+
+<template name="ItemName">
+	<div id="itemNamePicker" class="itemName picker section">
+		<h1 class="title">Item Name</h1>
+		<h1 class="itemName">{{Name}}</h1>
+		<input class="edit" type="text" value="{{Name}}">
+	</div>
+</template>
+
+<template name="ItemImage">
+	<div id="itemImagePicker" class="itemImage picker section">
+		<h1 class="title">Image</h1>
+		<a class="previous button">&laquo;</a>
+		<div class="itemImage" style="background-image: url({{Image.resultURL}});">
+
+		</div>
+		<a class="next button">&raquo;</a>
+	</div>
+</template>
+
+<template name="ItemCaption">
+	<div id="itemCaptionPicker" class="itemCaption picker section">
+		<h1 class="title">Caption</h1>
+		<a class="previous button">&laquo;</a>
+		<p class="itemCaption">
+			{{Caption}}
+		</p>
+		<a class="next button">&raquo;</a>
+	</div>
+</template>
+
+<template name="ItemPrice">
+		<div id="itemPricePicker" class="itemPrice picker section">
+		<h1 class="title">Price</h1>
+		<a class="previous button">&laquo;</a>
+		<h3 class="itemPrice">{{Price}}</h3>
+		<a class="next button">&raquo;</a>
+	</div>
+</template>
+
+<template name="ItemTags">
+		<div id="itemTagsPicker" class="itemTags section">
+		<h1 class="title">Tags</h1>
+		<textarea class="itemTags">
+			{{#each Tags}}
+			<p>{{Tag}}</p>
+			{{/each}}
+		</textarea>
+	</div>
 </template>
