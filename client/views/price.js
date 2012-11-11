@@ -3,15 +3,16 @@
 
 */
 var view = {
+	initialize : function () {
+		_.bindAll(this, 'render');
+		this.model.bind('change', this.render);
+	},
 	render : function () {
-		var template = _.template( $('#itemPricePicker') );
+		var template = Meteor.render(function () {
+			return Template.ItemPrice();
+		});
 		this.$el.html(template);
-	},
-	next : function () {
-		$('h3.itemPrice').html('no');
-	},
-	previous : function () {
-		$('h3.itemPrice').html('yes');
+		return this;
 	}
 };
 

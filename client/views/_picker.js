@@ -3,13 +3,21 @@
 
 */
 var view = {
-	render : function () {
-		var template = _.template( $('.picker').html() );
-		this.$el.html(template);
-	},
 	events : {
 		'click .next' : 'next',
 		'click .previous' : 'previous'
+	},
+	next : function () {
+		var index = this.model.get('index');
+		index++;
+		console.log(index);
+		this.model.set('index', index);
+	},
+	previous : function () {
+		var index = this.model.get('index');
+		index--;
+		console.log(index);
+		this.model.set('index', index);
 	}
 };
 

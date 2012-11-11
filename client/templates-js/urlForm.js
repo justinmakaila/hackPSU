@@ -11,7 +11,7 @@ Template.urlForm.events({
 	        	"getItemNames",
 	        	itemCandidate.get("URL"),
 	        	function(error, result) {
-	          		itemCandidate.set("Names", result);
+	          		names.set("Names", result);
 	        	}
 	      	);
 
@@ -20,7 +20,7 @@ Template.urlForm.events({
 	        	"getItemImages",
 	        	itemCandidate.get("URL"),
 	        	function(error, result) {
-	          		itemCandidate.set("Images", result);
+	          		images.set("Images", result);
 	        	}
 	      	);
 
@@ -29,7 +29,7 @@ Template.urlForm.events({
 				"getItemCaptions",
 				itemCandidate.get("URL"),
 				function(error, result) {
-					itemCandidate.set("Captions", result);
+					captions.set("Captions", result);
 				}
 			);
 
@@ -38,7 +38,7 @@ Template.urlForm.events({
 				"getItemTags",
 				itemCandidate.get("URL"),
 				function(error, result) {
-					itemCandidate.set("Tags", result);
+					tags.set("Tags", result);
 				}
 			);
 		}

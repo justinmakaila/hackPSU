@@ -3,15 +3,16 @@
 
 */
 var view = {
+	initialize : function () {
+		_.bindAll(this, 'render');
+		this.model.bind('change', this.render);
+	},
 	render : function () {
-		var template = _.template( $('#itemImagePicker') );
+		var template = Meteor.render(function () {
+			return Template.ItemImage();
+		});
 		this.$el.html(template);
-	},
-	next : function () {
-		$('div.itemImage > div.itemImage').html('no');
-	},
-	previous : function () {
-		$('div.itemImage > div.itemImage').html('yes');
+		return this;
 	}
 };
 
