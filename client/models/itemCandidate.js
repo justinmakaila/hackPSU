@@ -21,7 +21,13 @@ var model = {
     "Tags" : [],
     "Prices" : [],
     "URL" : null
-	}
+	},
+
+  initialize : function() {
+    this.on("change", function(model) {
+      console.log(model.attributes);
+    });
+  }
 };
 
 /* 
