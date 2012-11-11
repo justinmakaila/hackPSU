@@ -7,22 +7,22 @@ Template.urlForm.events({
 	"click button" : function() {
 		if(itemCandidate.get("URL")) {
 			// Get Item Name
-	    	Meteor.call(
-	        	"getItemNames",
-	        	itemCandidate.get("URL"),
-	        	function(error, result) {
-	          		itemCandidate.set("Names", result);
-	        	}
-	      	);
+    	Meteor.call(
+        	"getItemName",
+        	itemCandidate.get("URL"),
+        	function(error, result) {
+          		itemCandidate.set("Name", result);
+        	}
+      	);
 
-	      	// Get Item Images
-	      	Meteor.call(
-	        	"getItemImages",
-	        	itemCandidate.get("URL"),
-	        	function(error, result) {
-	          		itemCandidate.set("Images", result);
-	        	}
-	      	);
+      	// Get Item Images
+      	Meteor.call(
+        	"getItemImages",
+        	itemCandidate.get("URL"),
+        	function(error, result) {
+          		itemCandidate.set("Images", result);
+        	}
+      	);
 
 			// Get Item Captions
 			Meteor.call(
@@ -34,13 +34,24 @@ Template.urlForm.events({
 			);
 
 			// Get Item Tags
-			Meteor.call(
-				"getItemTags",
-				itemCandidate.get("URL"),
-				function(error, result) {
-					itemCandidate.set("Tags", result);
-				}
-			);
+      Meteor.call(
+        "getItemTags",
+        itemCandidate.get("URL"),
+        function(error, result) {
+          itemCandidate.set("Tags", result);
+        }
+      );
+
+      // Get Item Price
+      Meteor.call(
+        "getItemPrice",
+        itemCandidate.get("URL"),
+        function(error, result) {
+          itemCandidate.set("Price", result);
+        }
+      );
+
+      $('div.itemCandidate').show();
 		}
 	}
 });
