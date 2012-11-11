@@ -42,16 +42,18 @@ h1.title {
   padding-bottom: 8px;
 }
 .button {
-  background: #f0f0f0;
+  background: #e0e0e0;
   border: 1px solid #ccc;
   border-radius: 4px;
+  color: #666;
   text-align: center;
   padding: 4% 0;
   width:10%;
 }
 .button:hover {
-  background: #fafafa;
+  background: #f0f0f0;
   border-color: #aaa;
+  color:#888;
   cursor: pointer;
 }
 .button.previous { float: left; }
