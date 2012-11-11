@@ -7,22 +7,22 @@ Template.urlForm.events({
 	"click button" : function() {
 		if(itemCandidate.get("URL")) {
 			// Get Item Name
-      Meteor.call(
-        "getItemNames",
-        itemCandidate.get("URL"),
-        function(error, result) {
-          itemCandidate.set("Names", result);
-        }
-      );
+	    	Meteor.call(
+	        	"getItemNames",
+	        	itemCandidate.get("URL"),
+	        	function(error, result) {
+	          		itemCandidate.set("Names", result);
+	        	}
+	      	);
 
-      // Get Item Images
-      Meteor.call(
-        "getItemImages",
-        itemCandidate.get("URL"),
-        function(error, result) {
-          itemCandidate.set("Images", result);
-        }
-      );
+	      	// Get Item Images
+	      	Meteor.call(
+	        	"getItemImages",
+	        	itemCandidate.get("URL"),
+	        	function(error, result) {
+	          		itemCandidate.set("Images", result);
+	        	}
+	      	);
 
 			// Get Item Captions
 			Meteor.call(
