@@ -4,14 +4,14 @@
 */
 var view = {
 	render : function () {
-		var template = _.template( $('.itemImage') );
+		var template = _.template( $('#itemImagePicker') );
 		this.$el.html(template);
 	},
 	next : function () {
-		$('div.itemImage').html('no');
+		$('div.itemImage > div.itemImage').html('no');
 	},
 	previous : function () {
-		$('div.itemImage').html('yes');
+		$('div.itemImage > div.itemImage').html('yes');
 	}
 };
 

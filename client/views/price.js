@@ -4,7 +4,7 @@
 */
 var view = {
 	render : function () {
-		var template = _.template( $('.itemPrice') );
+		var template = _.template( $('#itemPricePicker') );
 		this.$el.html(template);
 	},
 	next : function () {

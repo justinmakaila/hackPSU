@@ -4,7 +4,7 @@
 */
 var view = {
 	render : function () {
-		var template = _.template( $('.itemName') );
+		var template = _.template( $('#itemNamePicker') );
 		this.$el.html(template);
 	},
 	next : function () {
