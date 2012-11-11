@@ -38,7 +38,7 @@
 	<div id="itemImagePicker" class="itemImage picker section">
 		<h1 class="title">Image</h1>
 		<a class="previous button">&laquo;</a>
-		<div class="itemImage" style="background-image: url({{Image.resultURL}});">
+		<div class="itemImage" style="background-image: url({{Image.resultURL}}); background-repeat: no-repeat;">
 
 		</div>
 		<a class="next button">&raquo;</a>
@@ -68,10 +68,11 @@
 <template name="ItemTags">
 		<div id="itemTagsPicker" class="itemTags section">
 		<h1 class="title">Tags</h1>
-		<textarea class="itemTags">
+		<ul class="itemTags">
 			{{#each Tags}}
-			<p>{{Tag}}</p>
+			<li>{{this.text}}</li>
+			<!--Add anchor tags for destroy-->
 			{{/each}}
-		</textarea>
+		</ul>
 	</div>
 </template>
