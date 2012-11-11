@@ -1,0 +1,118 @@
+/* items.css */
+
+/* Top-level styles */
+html, body {
+	background: url(/images/background/subtle_dots.png);
+  margin: 10px;
+}
+* { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+
+/* urlForm */
+.urlForm {
+	background: white;
+	border: 1px solid #ccc;
+  box-shadow:0 1px 2px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+	padding: 10px;
+	width: 100%;
+}
+
+/* itemCandidate */
+.itemCandidate {
+  background:white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  padding-bottom: 10px;
+  width: 355px;
+}
+
+/* Shared styles */
+div.section {
+  border-bottom: 1px dotted #ccc;
+  margin: 0 4% 15px 4%;
+  overflow: hidden;
+  padding: 4% 0;
+}
+h1.title {
+  border-bottom: 1px solid #aaa;
+  color: #38B5CE;
+  font-size: 20px;
+  margin: 0 0 10px 0;
+  padding-bottom: 8px;
+}
+.button {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding: 4% 0;
+  width:10%;
+}
+.button:hover {
+  background: #fafafa;
+  border-color: #aaa;
+  cursor: pointer;
+}
+.button.previous { float: left; }
+.button.next { float: right; }
+
+/* itemName */
+div.itemName h1.itemName {
+  float: left;
+  font-size: 24px;
+  margin: 2% 0;
+  text-align: center;
+  text-decoration: underline;
+  width: 80%;
+}
+
+/* itemImage */
+div.itemImage div.itemImage {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  float: left;
+  height: 210px;
+  margin: 0 4%;
+  width: 72%;
+}
+
+/* itemCaption */
+div.itemCaption p.itemCaption {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  color: #666;
+  float: left;
+  font-size: 13px;
+  margin: 0 4%;
+  padding: 4%;
+  width: 72%;
+}
+
+/* itemPrice */
+div.itemPrice h3.itemPrice {
+  float: left;
+  font-size: 18px;
+  margin: 4% 0;
+  text-align: center;
+  text-decoration: underline;
+  width: 80%;
+}
+
+/* itemTags */
+div.itemTags textarea.itemTags {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  color: #666;
+  float: left;
+  font-size: 13px;
+  padding: 4%;
+  width: 100%;
+}
+
+/* Add Button */
+button[name="Add"] {
+  margin: 4% 4% 0 4%;
+  padding: 4%;
+  width: 92%;
+}
