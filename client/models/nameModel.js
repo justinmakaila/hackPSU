@@ -3,7 +3,7 @@
 */
 var model = {
 	defaults : {
-		"Names" : [],
+		"Name" : null,
 		"index" : 0
 	},
 	initialize : function () {
